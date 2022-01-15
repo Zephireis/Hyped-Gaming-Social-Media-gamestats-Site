@@ -1,0 +1,174 @@
+p {
+
+  font-size: 20px;
+}
+
+body {
+  background: #f4f4f4
+}
+
+body {
+  /* background-color: #D0D0D0; */
+  background-color: ##FFFFFF;
+  font-family: Sans-Serif
+}
+
+
+
+#panel, #flip {
+  padding: 5px;
+  text-align: center;
+  background-color: #e5eecc;
+  border: solid 1px #c3c3c3;
+}
+
+#panel {
+  padding: 50px;
+  display: none;
+}
+
+#cent {
+  text-align: center
+}
+
+
+.halolist {
+  text-align: left;
+  color: white;
+  padding-left: 30px;
+
+
+
+}
+
+.display1{
+
+  text-align: center;
+  color: white;
+
+
+}
+
+.navbar-custom {
+  background-color: #333333 !important;
+  border-bottom: 3px solid #2AAF07;
+}
+
+/* .carousel-inner > .carousel-item{
+  height: auto;
+  margin: auto; */
+/* } */
+
+
+
+
+
+
+.avatar {
+  position: relative;
+  bottom: 90px;
+  text-align: center
+}
+
+.picture {
+  border-radius: 100%;
+  border-style: solid;
+  border-width: 3px;
+  border-color: white;
+}
+
+.cards {
+  margin: auto;
+  text-align: center;
+
+}
+.card {
+
+}
+
+
+.bioinfo {
+  margin-left: 25px;
+  margin-top: 5px;
+}
+
+.miniinfo {
+  color: #aeb3b9;
+
+}
+
+.handle {
+  color: #aeb3b9;
+}
+
+
+
+.minibio{
+  line-height: 0px;
+}
+
+
+.cards {
+  justify-content: end;
+}
+
+
+.jumbotron-image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+   /* Scales the image as large as possible to fill the container, stretching the image if necessary. If the proportions of the image differ from the element, it is cropped either vertically or horizontally so that no empty space remains. */
+
+}
+
+.jumbotron {
+  height: 300px;
+}
+
+.halo-image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+@media only screen and (max-width:600px){
+  .jumbotron-image{
+    background-size: cover;
+
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .minibio {
+    margin-right: 20px;
+
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .bioinfo {
+    margin-right: 20px;
+  }
+}
+
+@media only screen and (max-width: 12450px) {
+  .avatar {
+    text-align: left;
+    display: block;
+
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .avatar {
+    text-align: center;
+    display: block;
+
+  }
+}
+@media only screen and (min-width: 768px) {
+  .carousel-inner > .carousel-item {
+    height: 30rem;
+  }

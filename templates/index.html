@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <title>Flask App</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/styles.css">
+  <link href="{{ url_for('static', filename='css/style.css')}}" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar-custom navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">HypedGaming</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Divisions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Shop</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Actio n</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container py-5">
+      <div class="jumbotron jumbotron-jumbotron-fluid text-white jumbotron-image shadow joobma" style="background-image: url(https://i.imgur.com/2vOMV3N.png);">
+        <h2 class="mb-4"></h2>
+        <p class="mb-4"></p>
+      </div>
+    </div>
+
+
+    <!-- <div class="jumbotron jumbotron-fluid" style="background-image: url(https://i.imgur.com/2vOMV3N.png);">
+      <div class="container">
+        <h1>Bootstrap Tutorial</h1>
+        <p>Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile-first projects on the web.</p>
+      </div>
+    </div> -->
+
+
+  <!-- carousel Area  -->
+  <!-- <div class="container-sm">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100" src="https://imgur.com/PmBGVA0.png" alt="First slide">
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- profile picture  -->
+  <div class="container avatar">
+    <div class="pfp">
+      {% if current_user %}
+      <img class="picture" src="{{current_user.avatar_url}}" class="rounded" alt="...">
+      {% else %}
+      <img class="" src="" class="" alt="">
+      {% endif %}
+    </div>
+    <div class="bioinfo">
+      <!-- profile name here -->
+    <div class="profinfo">
+      {% if current_user %}
+      <h2>{{current_user.username}}</h2>
+      <p class="handle">@{{current_user.username}}</p>
+      <p class="minibio">  <span>Founder of Hyped Gaming</span></p>
+      <p class="miniinfo">
+        <span>United States</span>
+        <a class"website" href="http://hypedgamingonline.gg">hypedgaming.gg</a>
+      </p>
+      {% else %}
+      <p class="handle"></p>
+      <p class="minibio"> <span></span></p>
+      <p class="miniinfo">
+        <span></span>
+        <span></span>
+      </p>
+      {% endif %}
+    </div>
+    </div>
+  </div>
+
+<div id="div1">
+  <div class="container">
+    <div class="row" id="nut">
+      <div class="col-sm">
+        <div class="jumbotron halo" style="background-image: url(https://ftw.usatoday.com/wp-content/uploads/sites/90/2021/11/Halo_Infinite_MP12.jpg?w=1000&h=600&crop=1)";>
+          {% if current_user %}
+          <h2 class="display1">Halo</h2>
+          <ul class="halolist" style='list-style-type:none;'>
+            <!-- For loop logic of jinja template -->
+            {%for i in range(0, len)%}
+                <li class="haloStats">{{statslist[i]}}</li>
+
+            {%endfor%}
+          {% endif %}
+          </ul>
+
+
+
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="jumbotron">
+          <h2 class="display1">TankPit</h2><br>
+          <p class="lead">{{a}}</p>
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="jumbotron">
+          <h2 class="display1" id="cent">Hyped Gaming</h2><br>
+          <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+
+
+
+   {% if current_user %}
+       <p>Logged in as {{current_user.username}}#{{current_user.discrimnator}}</p>
+       <p>ID: {{current_user.id}}</p><br>
+
+       <a href="/logout"><button>Log out</button></a>
+  {% else %}
+  <a href="{{oauth_uri}}"><button>Login with Discord</button></a>
+  {% endif %}
+
+
+<!--
+   <div class="container cards">
+    <div class="row">
+      <div class="col-sm">
+        One of three columns
+      </div>
+      <div class="col-sm">
+        One of three columns
+      </div>
+      <div class="col-sm">
+        One of three columns
+      </div>
+    </div>
+  </div>
+  <div id="ape">
+    <p id="demo">Waddup</p>
+    <p id=demo>If you click on the "Hide" button, I will disappear.</p>
+  </div>
+
+
+
+  <button id="hide">Hide</button>
+  <button id="show">Show</button>
+<h2>Select a file to upload</h2>
+<p>
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <ul>
+    {% for messages in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  {% endwith %}
+</p>
+{% if filename %}
+<div style="padding:20px;">
+
+</div>
+{% endif %}
+<form class="" action="/" method="post" enctype="multipart/form-data">
+  <dl>
+    <p>
+      <input type="file" name="file" class"form-control" autocomplete="off" required>
+    </p>
+  </dl>
+     <p>
+       <input type="submit" value="Submit" class="btn btn-info">
+     </p>
+<img src="uploads/me.jpg">
+</form>
+<audio controls>
+
+        Your browser does not support the audio element.
+    </audio>
+
+    <div id='bump'>
+      <div id="flip">Click to slide down panel</div>
+      <div id="panel">Hello world!</div>
+    </div> -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="{{ url_for('static', filename='js/myfile.js')}}" charset="utf-8"></script>
+
+
+
+</body>
+
+
+</html>
