@@ -162,4 +162,4 @@ if __name__ == "__main__":
     # app.run(debug=True)
     t = Thread(target=partial_run)
     t.start()
-    bot.run("Mjg4MjU4MDEwNjEzMTUzODAy.WL07MQ.-mI3GE8_vP0Omw3jw3N-pbRDrGg")
+    bot.run("")
